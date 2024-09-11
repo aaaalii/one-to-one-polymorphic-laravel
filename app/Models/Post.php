@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Post extends Model
 {
     use HasFactory;
-    protected $guarded = [];
     public $timestamps = false;
+    protected $guarded = [];
 
     public function images(){
         return $this->morphOne(Image::class, 'img');

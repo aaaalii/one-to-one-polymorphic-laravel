@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Image extends Model
 {
     use HasFactory;
     protected $guarded = [];
     public $timestamps = false;
 
-    public function images(){
-        return $this->morphOne(Image::class, 'img');
+    // function name should be same as the coloumn name in images tables before '_', which stores ids of other tables
+    public function img(){
+        return $this->morphTo();
     }
 }
